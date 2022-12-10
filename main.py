@@ -11,6 +11,7 @@ import makedata as mdata
 import bracket
 import bracket_year
 
+
 print(tf.version.VERSION)
 
 
@@ -194,6 +195,9 @@ def testStuff(training_inputs, training_outputs, transform):
 
 if __name__ == "__main__":
     m, training_inputs, training_outputs, test_inputs, test_outputs = mdata.getData()
+    print(m)
+    print(training_inputs.shape[1])
+    print(training_outputs.shape[1])
     model = makeModel(training_inputs.shape[1], training_outputs.shape[1])
 
     _, model = train(model, m, training_inputs, training_outputs, test_inputs, test_outputs)
